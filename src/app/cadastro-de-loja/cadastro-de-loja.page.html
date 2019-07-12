@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home-cliente"></ion-back-button>
+
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="logoff()" placeholder="Logar">
+        <ion-icon color="danger" slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align:center;font-size:25px;">SHAPE MIN.</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formGroup">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label floating>Nome:</ion-label>
+        <ion-input formControlName="nome" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+
+        <ion-label floating>Telefone:</ion-label>
+        <ion-input formControlName="telefone" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+
+        <ion-label floating>CNPJ:</ion-label>
+        <ion-input   [brmasker]="{mask:'00-00', len:5, userCaracters: true}" formControlName="mask" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-icon name="person" item-start></ion-icon>
+        <ion-label floating>Endereço:</ion-label>
+        <ion-input formControlName="endereco" type="text"></ion-input>
+      </ion-item>
+      
+
+
+    </ion-list>
+
+    <ion-button expand="full" (click)="cadastrar()">Cadastrar sua Loja</ion-button>
+  </form>
+
+
+</ion-content>
+
+
+
+
+
+
+
+
